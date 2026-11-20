@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Asesores Infinity Group</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,500;0,700;0,800;1,800&display=swap">
+<style>
+/* Layout: una columna tipo celular — flyer arriba, paso final con botón gigante de WhatsApp, beneficios, pasos y pie legal. Look único verde selva + dorado (marca). */
+:root{
+  --verde:#0B4D32; --verde-osc:#062E1E; --verde-medio:#11683F;
+  --oro1:#F7D44C; --oro2:#C99A1E; --crema:#FFF9E6;
+  --wsp:#25D366; --wsp-osc:#128C4A; --texto:#FFFFFF; --suave:#CFE3D6;
+  --display:"Anton", Impact, "Arial Narrow", sans-serif;
+  --body:"Montserrat", "Segoe UI", Arial, sans-serif;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+html{background:var(--verde-osc)}
+body{
+  background:
+    radial-gradient(120% 60% at 50% 0%, var(--verde-medio) 0%, transparent 60%),
+    linear-gradient(180deg, var(--verde) 0%, var(--verde-osc) 100%);
+  color:var(--texto); font-family:var(--body); font-size:16px; line-height:1.5;
+  min-height:100%;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+  padding-block:20px 32px;
+}
+.wrap{max-width:480px; margin:0 auto; display:flex; flex-direction:column; gap:22px}
+
+.check{
+  align-self:center; display:inline-flex; align-items:center; gap:8px;
+  background:rgba(255,255,255,.1); border:1px solid rgba(247,212,76,.45);
+  color:var(--oro1); font-weight:700; font-size:13px; letter-spacing:.06em; text-transform:uppercase;
+  padding:7px 14px; border-radius:999px;
+}
+.check svg{width:16px;height:16px}
+
+h1{
+  font-family:var(--display); font-weight:400; text-transform:uppercase;
+  font-size:clamp(34px, 10vw, 46px); line-height:1.02; margin:0; text-align:center; text-wrap:balance;
+}
+h1 .oro{
+  background:linear-gradient(180deg,var(--oro1),var(--oro2));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.lead{margin:0; text-align:center; color:var(--suave); font-size:16px; text-wrap:balance}
+.lead b{color:var(--texto)}
+
+.flyer{
+  width:100%; max-width:100%; display:block; border-radius:18px;
+  border:3px solid var(--oro2); box-shadow:0 18px 40px rgba(0,0,0,.45);
+}
+
+/* Paso final: el bloque protagonista */
+.final{
+  background:var(--crema); color:var(--verde-osc); border-radius:22px;
+  padding:22px 18px; display:flex; flex-direction:column; gap:14px; text-align:center;
+  box-shadow:0 14px 30px rgba(0,0,0,.35);
+}
+.final .tag{
+  font-weight:800; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--verde-medio);
+}
+.final h2{font-family:var(--display); font-weight:400; font-size:30px; line-height:1.05; margin:0; text-transform:uppercase; text-wrap:balance}
+.final p{margin:0; font-size:15px}
+
+.btn-wsp{
+  display:flex; align-items:center; justify-content:center; gap:12px;
+  background:var(--wsp); color:#fff; text-decoration:none;
+  font-weight:800; font-size:18px; letter-spacing:.02em; text-transform:uppercase;
+  padding:18px 16px; border-radius:16px;
+  box-shadow:0 6px 0 var(--wsp-osc), 0 14px 26px rgba(18,140,74,.45);
+  animation:latido 1.8s ease-in-out infinite;
+}
+.btn-wsp:hover{filter:brightness(1.05)}
+.btn-wsp:active{transform:translateY(4px); box-shadow:0 2px 0 var(--wsp-osc)}
+.btn-wsp:focus-visible{outline:4px solid var(--oro1); outline-offset:3px}
+.btn-wsp svg{width:28px;height:28px;flex:none}
+@keyframes latido{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+@media (prefers-reduced-motion: reduce){.btn-wsp{animation:none}}
+.mini{font-size:13px; color:#3d5e4c}
+
+/* Beneficios */
+.sec-title{font-family:var(--display); font-weight:400; text-transform:uppercase; font-size:24px; margin:0; text-align:center; color:var(--oro1)}
+.beneficios{list-style:none; margin:0; padding:0; display:grid; gap:10px}
+.beneficios li{
+  display:flex; gap:12px; align-items:center;
+  background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12);
+  border-radius:14px; padding:12px 14px; font-weight:700; font-size:15px; min-width:0;
+}
+.ico{
+  flex:none; width:38px; height:38px; border-radius:50%;
+  background:linear-gradient(180deg,var(--oro1),var(--oro2)); color:var(--verde-osc);
+  display:grid; place-items:center; font-family:var(--display); font-size:15px;
+}
+.ico svg{width:20px;height:20px}
+.beneficios small{display:block; font-weight:500; color:var(--suave); font-size:13px}
+
+/* Pasos: es una secuencia real */
+.pasos{list-style:none; margin:0; padding:0; display:grid; gap:12px; counter-reset:p}
+.pasos li{display:flex; gap:12px; align-items:flex-start; counter-increment:p; font-size:15px; color:var(--suave)}
+.pasos li::before{
+  content:counter(p); flex:none; width:30px; height:30px; border-radius:50%;
+  border:2px solid var(--oro1); color:var(--oro1); display:grid; place-items:center;
+  font-family:var(--display); font-size:16px;
+}
+.pasos b{color:var(--texto)}
+.pasos .hecho::before{content:"✓"; background:var(--oro1); color:var(--verde-osc)}
+
+.respaldo{
+  text-align:center; border-top:1px solid rgba(255,255,255,.14); padding-top:18px;
+  display:flex; flex-direction:column; gap:4px;
+}
+.respaldo .num{font-family:var(--display); font-size:40px; line-height:1; color:var(--oro1)}
+.respaldo span{color:var(--suave); font-size:14px}
+
+footer{text-align:center; font-size:12px; color:var(--suave); display:flex; flex-direction:column; gap:6px}
+footer a{color:var(--oro1)}
+</style>
+</head>
+<body>
+
+<main class="wrap">
+  <span class="check">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+    Postulación recibida
+  </span>
+
+  <h1>¡Ya casi eres parte <span class="oro">del equipo!</span></h1>
+  <p class="lead">Gracias por postular como <b>asesor inmobiliario</b> en <b>Pucallpa y Tingo María</b>.</p>
+
+  <section class="final" aria-labelledby="t-final">
+    <span class="tag">Último paso</span>
+    <h2 id="t-final">Entra al grupo oficial de asesores</h2>
+    <p>Ahí recibirás la fecha de la capacitación gratuita, el material de venta y los nuevos proyectos antes que nadie.</p>
+    <a class="btn-wsp" href="https://chat.whatsapp.com/FrqwxFWBmiBIZF4ynONqGi" target="_blank" rel="noopener">
+      <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8C29 8.7 23.2 3 16 3Zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.2-3.8 1.2 1.2-3.7-.3-.4a10.4 10.4 0 0 1-1.6-5.7C5.2 10 10 5.3 16 5.3S26.8 10 26.8 15.8 22 26.4 16 26.4Zm5.9-7.8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.7c-.3-.6.3-.5.9-1.6.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.2 1.3 3.4c.2.2 2.3 3.5 5.6 4.9 2.1.9 2.9 1 4 .8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4Z"/></svg>
+      Unirme al grupo de WhatsApp
+    </a>
+    <p class="mini">Al abrir WhatsApp, toca <b>"Unirse al grupo"</b>.</p>
+  </section>
+
+  <img class="flyer" src="flyer.jpg" alt="Infinity Group MB: ¡Únete a nuestro equipo! Buscamos asesores de venta inmobiliaria en Tingo María y Pucallpa. Comisiones desde 7 % hasta el 12 %." width="900" height="1125">
+
+  <h2 class="sec-title">Lo que ganas al unirte</h2>
+  <ul class="beneficios">
+    <li><span class="ico">%</span><div>Comisiones del 7 % al 12 %<small>por cada venta cerrada</small></div></li>
+    <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span><div>Capacitación gratuita<small>aunque nunca hayas vendido terrenos</small></div></li>
+    <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="m10 9 5 2.5-5 2.5V9Z"/></svg></span><div>Material de venta listo<small>videos y flyers para compartir</small></div></li>
+    <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></span><div>Horario flexible<small>trabaja desde tu celular</small></div></li>
+  </ul>
+
+  <h2 class="sec-title">Qué sigue</h2>
+  <ol class="pasos">
+    <li class="hecho"><span><b>Postulaste.</b> Ya tenemos tus datos.</span></li>
+    <li><span><b>Entra al grupo de WhatsApp</b> con el botón verde.</span></li>
+    <li><span><b>Preséntate</b> con tu nombre, tu ciudad y cómo conseguirías clientes.</span></li>
+    <li><span><b>Capacitación gratuita:</b> te avisamos la fecha en el grupo.</span></li>
+  </ol>
+
+  <div class="respaldo">
+    <span class="num">+7,000</span>
+    <span>lotes vendidos por Infinity Group MB</span>
+  </div>
+
+  <footer>
+    <span>Infinity Group MB S.A.C. · RUC 20615486281</span>
+    <a href="privacidad.html">Política de privacidad</a>
+  </footer>
+</main>
+</body>
+</html>
